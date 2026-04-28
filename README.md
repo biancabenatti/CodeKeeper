@@ -1,4 +1,5 @@
 <img src="./public/LogoGeral.png" alt="CodeKeeper" width="100%">
+
 # CodeKeeper - Cifra de César 
 
 ## Sobre o Projeto
@@ -49,16 +50,16 @@ O frontend foi construído utilizando **React.js** com foco em usabilidade e est
 
 1. **Clonar o Repositório**
    ```bash
-   git clone [https://github.com/biancabenatti/CodeKeeper](https://github.com/biancabenatti/CodeKeeper)
+   git clone [https://github.com/biancabenatti/CodeKeeper]
    ```
 
 2. **Configurar o Frontend**
 
-```bash
-Entre na pasta do frontend
-npm install
-npm run dev
-```
+    ```bash
+    cd frontend
+    npm install
+    npm run dev
+    ```
 
 3. **Configurar o Backend**
 COLOCAR DEPOIS 
