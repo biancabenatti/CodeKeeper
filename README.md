@@ -3,8 +3,6 @@
   <img src="https://fast-purple-qnznqglelu.edgeone.app/LogoGeral.png" alt="CodeKeeper Logo" width="400">
 </p>
 
-# CodeKeeper - Cifra de César 
-
 ## Sobre o Projeto
 Este projeto foi desenvolvido como parte do Trabalho Prático da disciplina, visando implementar a técnica de criptografia de César com persistência em banco de dados e uma interface de usuário moderna.
 
