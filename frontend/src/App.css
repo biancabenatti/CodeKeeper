@@ -1,0 +1,19 @@
+.main-wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; 
+  background: #05070a; 
+}
+
+.slider-container {
+  display: flex;
+  width: 300vw; 
+  height: 100vh;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1); 
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0; 
+}
