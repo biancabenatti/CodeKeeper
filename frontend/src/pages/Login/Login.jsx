@@ -1,6 +1,17 @@
 import "./Login.css";
 
-export default function Login({ setView }) {
+export default function Login({ setView, onLogin }) {
+  
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
+    console.log("Botão clicado!"); // Adicione este log para testar no F12
+    
+    if (onLogin) {
+      onLogin(); // Executa a função que veio do App.jsx
+    } else {
+      console.error("A função onLogin não foi passada para o componente!");
+    }
+  };
   return (
     <div className="login-container">
       {/* Botão Voltar posicionado no topo/esquerda */}
@@ -13,7 +24,7 @@ export default function Login({ setView }) {
         <h2>Identificação</h2>
         <p className="login-subtitle">Insira suas credenciais para acesso ao terminal.</p>
         
-        <form className="login-form" onSubmit={(e) => e.preventDefault()}>
+        <form className="login-form" onSubmit={handleSubmit}>
           <div className="input-group">
             <label>Usuário</label>
             <input type="text" placeholder="ID do Agente" />

@@ -1,12 +1,9 @@
 import { useState } from "react";
-import "./Cripto.css";
+import "./Criptografar.css";
 
 export default function Criptografar({ setView }) {
   return (
     <div className="action-container">
-      <button className="back-button" onClick={() => setView("home")}>
-        <span className="arrow">←</span> TERMINAL
-      </button>
 
       <div className="action-box">
         <div className="badge">Encryption Module</div>

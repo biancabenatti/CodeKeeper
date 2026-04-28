@@ -27,7 +27,7 @@ export default function Cadastro({ setView }) {
           
           <div className="input-row">
             <div className="input-group">
-              <label>Chave de Acesso (Senha)</label>
+              <label>Chave de Acesso</label>
               <input type="password" placeholder="••••••••" />
             </div>
             <div className="input-group">
