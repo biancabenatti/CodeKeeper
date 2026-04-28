@@ -1,4 +1,7 @@
-![Banner CodeKeeper](https://fast-purple-qnznqglelu.edgeone.app/LogoGeral.png)
+
+<p align="center">
+  <img src="https://fast-purple-qnznqglelu.edgeone.app/LogoGeral.png" alt="CodeKeeper Logo" width="400">
+</p>
 
 # CodeKeeper - Cifra de César 
 
