@@ -1,4 +1,4 @@
-<img src="./public/LogoGeral.png" alt="CodeKeeper" width="100%">
+![Banner CodeKeeper](https://ibb.co/HpgHFNDZ)
 
 # CodeKeeper - Cifra de César 
 
