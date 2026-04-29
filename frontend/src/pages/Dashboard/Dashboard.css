@@ -69,7 +69,6 @@
   position: relative;
 }
 
-/* Overlay sutil para o conteúdo */
 .dash-content::before {
   content: "";
   position: absolute;

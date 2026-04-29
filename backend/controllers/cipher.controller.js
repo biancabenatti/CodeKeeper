@@ -1,39 +1,61 @@
 const crypto = require("crypto");
 const Cipher = require("../models/Cipher");
 const { caesarEncrypt, caesarDecrypt } = require("../utils/caesar");
+const AppError = require("../utils/AppError");
 
 // CRIPTOGRAFAR
-exports.encrypt = async (req, res) => {
-  const { text, shift } = req.body;
+exports.encrypt = async (req, res, next) => {
+  try {
+    const { text, shift } = req.body;
 
-  const encrypted = caesarEncrypt(text, Number(shift));
+    if (!text || shift === undefined) {
+      throw new AppError("Texto e shift são obrigatórios", 400);
+    }
 
-  const hash = crypto.randomBytes(8).toString("hex");
+    const encrypted = caesarEncrypt(text, Number(shift));
 
-  await Cipher.create({
-    hash,
-    shift,
-    used: false,
-  });
+    const hash = crypto.randomBytes(8).toString("hex");
 
-  res.json({ encrypted, hash });
+    await Cipher.create({
+      hash,
+      shift,
+      used: false,
+    });
+
+    res.json({ encrypted, hash });
+
+  } catch (err) {
+    next(err);
+  }
 };
 
 // DESCRIPTOGRAFAR
-exports.decrypt = async (req, res) => {
-  const { text, hash } = req.body;
+exports.decrypt = async (req, res, next) => {
+  try {
+    const { text, hash } = req.body;
 
-  const record = await Cipher.findOne({ hash });
+    if (!text || !hash) {
+      throw new AppError("Texto e hash são obrigatórios", 400);
+    }
 
-  if (!record) return res.status(400).json({ msg: "Hash inválido" });
+    const record = await Cipher.findOne({ hash });
 
-  if (record.used)
-    return res.status(400).json({ msg: "Hash já foi utilizado" });
+    if (!record) {
+      throw new AppError("Hash inválido", 400);
+    }
 
-  const decrypted = caesarDecrypt(text, record.shift);
+    if (record.used) {
+      throw new AppError("Hash já foi utilizado", 400);
+    }
 
-  record.used = true;
-  await record.save();
+    const decrypted = caesarDecrypt(text, record.shift);
 
-  res.json({ decrypted });
+    record.used = true;
+    await record.save();
+
+    res.json({ decrypted });
+
+  } catch (err) {
+    next(err);
+  }
 };
