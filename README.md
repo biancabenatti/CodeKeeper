@@ -110,7 +110,7 @@ Para que as requisições funcionem corretamente:
 
 ---
 
-### 🔐 Observação
+### Observação
 
 As rotas protegidas exigem autenticação via JWT.  
 Por isso, o login deve ser realizado antes de testar os endpoints de criptografia e descriptografia.
