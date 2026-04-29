@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Cadastro.css";
 import API_URL from "../../services/api";
 import { toastSuccess, toastError } from "../../utils/toast";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function Cadastro({ setView }) {
   const [username, setUsername] = useState("");
@@ -109,23 +110,40 @@ export default function Cadastro({ setView }) {
           <div className="input-row">
             <div className="input-group">
               <label>Chave de Acesso</label>
-              <input
-                type="password"
-                placeholder="••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <div className="password-field-container">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="••••••••"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button
+                  type="button"
+                  className="toggle-password-btn"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                </button>
+              </div>
             </div>
-            
 
             <div className="input-group">
               <label>Confirmar Chave</label>
-              <input
-                type="password"
-                placeholder="••••••••"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
+              <div className="password-field-container">
+                <input
+                  type={showConfirmPassword ? "text" : "password"}
+                  placeholder="••••••••"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+                <button
+                  type="button"
+                  className="toggle-password-btn"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                >
+                  {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                </button>
+              </div>
             </div>
           </div>
 

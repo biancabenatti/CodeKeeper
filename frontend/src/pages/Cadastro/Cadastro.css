@@ -141,25 +141,36 @@
   opacity: 0.6;
   cursor: not-allowed;
 }
-
-.password-wrapper {
+.password-field-container {
   position: relative;
   display: flex;
   align-items: center;
-}
-
-.password-wrapper input {
   width: 100%;
-  padding-right: 40px;
 }
 
-.eye-button {
+
+.password-field-container input {
+  width: 100%;
+  padding-right: 40px; 
+}
+
+
+.toggle-password-btn {
   position: absolute;
   right: 10px;
-  background: none;
+  background: transparent;
   border: none;
+  color: #888; 
   cursor: pointer;
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.toggle-password-btn:hover {
+  color: #ffffffb2; 
 }
 
 @media (max-width: 480px) {
