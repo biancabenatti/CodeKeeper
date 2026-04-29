@@ -57,9 +57,9 @@ O backend foi desenvolvido com foco em segurança, autenticação e persistênci
 **2. Configuração do Frontend**
 
     ```bash
-        cd frontend
-        npm install
-        npm run dev
+    cd frontend
+    npm install
+    npm run dev
     ```
 O frontend ficará disponível em:
 
@@ -67,11 +67,11 @@ http://localhost:5173
 
 **3. Configuração do Backend**
 
-    ```bash
-        cd backend
-        npm install
-        npm run dev
-    ```
+  ```bash
+    cd backend
+    npm install
+    npm run dev
+   ```
 
 O backend ficará disponível em:
 
