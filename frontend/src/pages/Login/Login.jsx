@@ -4,17 +4,16 @@ export default function Login({ setView, onLogin }) {
   
   const handleSubmit = (e) => {
     e.preventDefault(); 
-    console.log("Botão clicado!"); // Adicione este log para testar no F12
+    console.log("Botão clicado!"); 
     
     if (onLogin) {
-      onLogin(); // Executa a função que veio do App.jsx
+      onLogin(); 
     } else {
       console.error("A função onLogin não foi passada para o componente!");
     }
   };
   return (
     <div className="login-container">
-      {/* Botão Voltar posicionado no topo/esquerda */}
       <button className="back-button" onClick={() => setView("home")}>
         <span className="arrow">←</span> VOLTAR
       </button>
