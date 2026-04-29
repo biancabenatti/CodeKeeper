@@ -44,13 +44,13 @@ exports.register = async (req, res, next) => {
 // LOGIN
 exports.login = async (req, res, next) => {
   try {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
 
-    if (!username || !password) {
-      throw new AppError("Usuário e senha são obrigatórios", 400);
+    if (!email || !password) {
+      throw new AppError("Email e senha são obrigatórios", 400);
     }
 
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ email });
 
     if (!user) {
       throw new AppError("Usuário não existe", 404);
@@ -63,7 +63,7 @@ exports.login = async (req, res, next) => {
     }
 
     const token = jwt.sign(
-      { id: user._id, username: user.username },
+      { id: user._id, email: user.email },
       process.env.JWT_SECRET,
       { expiresIn: "2h" }
     );
