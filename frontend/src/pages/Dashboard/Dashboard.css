@@ -62,7 +62,6 @@
 .dash-content {
   flex: 1;
   overflow-y: auto;
-  padding: 40px;
   background-image: url("/FundoCripto.png"); 
   background-size: cover;
   background-position: center;

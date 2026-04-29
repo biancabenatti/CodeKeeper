@@ -1,54 +1,67 @@
-.action-container-decripto {
+html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+}
+textarea,
+input {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.action-container-decripto {
+  min-height: 100vh; 
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px; 
+  box-sizing: border-box;
+  background-attachment: fixed;
 }
 
 .action-box-decripto {
   z-index: 2;
-  width: 95%; 
-  max-width: 1200px; 
-  background: rgba(10, 12, 16, 0.7);
-  backdrop-filter: blur(25px);
-  border: 1px solid rgba(0, 242, 255, 0.15);
-  border-left: 4px solid #00ff88; 
-  padding: 50px;
-  border-radius: 4px; 
+  width: 90%;
+  max-width: 1100px;
+  background: rgba(10, 12, 16, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  border-left: 4px solid #00ff88;
+  padding: 30px;
+  border-radius: 4px;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr; 
-  gap: 40px; 
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 30px;
   box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-.action-box-decripto h2.title-decripto {
+.action-box-decripto h2 {
   grid-column: span 2;
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding-bottom: 15px;
   font-family: 'JetBrains Mono', monospace;
   color: #fff;
+  font-size: 1.25rem;
   text-transform: uppercase;
   letter-spacing: 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
+/* Tipografia e Inputs */
 .badge-decripto {
   display: inline-block;
-  padding: 5px 12px;
-  background: rgba(0, 242, 255, 0.1);
-  border: 1px solid rgba(0, 242, 255, 0.2);
+  padding: 4px 10px;
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.2);
   color: #00ff88;
   border-radius: 4px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
 .input-group-decripto {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-align: left;
 }
 
@@ -57,18 +70,19 @@
   font-family: 'JetBrains Mono', monospace;
   color: #00ff88;
   font-size: 0.75rem;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
 }
 
 .action-form-decripto textarea, 
 .action-form-decripto input {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: 0.3s;
 }
 
@@ -79,65 +93,124 @@
   box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
 }
 
-.secondary-btn-decripto {
+/* Container de Senha com Olhinho */
+.password-field-container-decripto {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-btn-decripto {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: rgba(0, 255, 136, 0.5);
+  cursor: pointer;
+  display: flex;
+  padding: 5px;
+  transition: 0.2s;
+}
+
+.toggle-btn-decripto:hover {
+  color: #00ff88;
+}
+
+/* Área de Resultados */
+.result-area-decripto {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 255, 136, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.result-item-decripto {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.result-item-decripto code {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  color: #00ff88;
+  padding: 12px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  word-break: break-all;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+}
+
+.result-item-decripto code:hover {
+  border-color: #00ff88;
+  background: rgba(0, 255, 136, 0.05);
+}
+
+.result-item-decripto code::after {
+  content: "CLIQUE PARA COPIAR";
+  position: absolute;
+  right: 10px;
+  bottom: -15px;
+  font-size: 0.55rem;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Botões */
+.primary-btn-decripto {
   width: 100%;
-  padding: 16px;
-  background: linear-gradient(90deg, #00f2ff, #00ff88);
+  padding: 14px;
+  background: linear-gradient(90deg, #00ff88, #00cc66);
   border: none;
   border-radius: 6px;
   color: #000;
   font-family: 'JetBrains Mono', monospace;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   text-transform: uppercase;
-  margin-top: 10px;
 }
 
-.result-area-decripto {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 30px;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 242, 255, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.message-reveal-decripto {
+.secondary-btn-decripto {
+  background: transparent;
+  border: 1px solid #00ff88;
   color: #00ff88;
+  padding: 14px;
+  border-radius: 6px;
   font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 0.5rem;
 }
 
-.result-area-decripto.success-decripto {
-  margin-top: 0;
-  padding-left: 30px;
-  border-left: 1px dashed rgba(0, 255, 136, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.warning-decripto {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'JetBrains Mono', monospace;
+  margin-top: 30px;
+}
+
+/* Responsividade */
+@media (max-height: 800px) {
+  .action-box-decripto { padding: 20px; gap: 20px; }
+  .action-box-decripto h2 { font-size: 1.1rem; }
+  .result-area-decripto { padding: 15px; gap: 10px; }
+  .input-group-decripto { margin-bottom: 10px; }
 }
 
 @media (max-width: 1100px) {
-  .action-box-decripto {
-    grid-template-columns: 1fr;
-    padding: 30px;
-  }
-  .action-box-decripto h2.title-decripto { grid-column: span 1; }
+  .action-box-decripto { grid-template-columns: 1fr; max-width: 600px; }
+  .action-box-decripto h2 { grid-column: span 1; }
 }
 
-@media (max-width: 850px) {
-  .action-box-decripto {
-    grid-template-columns: 1fr;
-    max-height: 95vh;
-  }
-  .action-box-decripto h2.title-decripto, 
-  .badge-sec-decripto {
-    grid-column: span 1;
-  }
-  .result-area-decripto.success-decripto {
-    padding-left: 0;
-    padding-top: 20px;
-    border-left: none;
-    border-top: 1px dashed rgba(0, 255, 136, 0.2);
-  }
+@media (max-width: 600px) {
+  .action-container-decripto { padding: 10px; }
+  .action-box-decripto { padding: 15px; }
 }
